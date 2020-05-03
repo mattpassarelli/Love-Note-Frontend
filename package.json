@@ -12,7 +12,8 @@
     "react-scripts": "3.4.1"
   },
   "scripts": {
-    "start": "concurrently \"react-scripts start\" \"nodemon ../Backend/server.js\"",
+    "start": "react-scripts start",
+    "start:dev": "concurrently \"react-scripts start\" \"nodemon ../Backend/server.js\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
