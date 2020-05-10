@@ -15,6 +15,7 @@ function App() {
   const [messageText, setMessageText] = useState("");
   const [username, setUsername] = useState("");
   const [isSendingMessage, setIsSendingMessage] = useState(false);
+  const CHAR_FINAL = 50;
 
   useEffect(() => {});
 
@@ -71,8 +72,12 @@ function App() {
                 className="messageText"
                 type="text"
                 rows="3"
+                maxLength={CHAR_FINAL}
                 onChange={(e) => setMessageText(e.target.value)}
               />
+              <Form.Text className="text-muted">
+                {messageText.length}/{CHAR_FINAL}
+              </Form.Text>
             </Form.Group>
           </Form>
 
