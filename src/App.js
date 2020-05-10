@@ -32,12 +32,22 @@ function App() {
     };
 
     axios
-      .post(API_ENDPOINT + `users/${username.toLowerCase() === "matt" ? "Rayanne" : "Matt"}/sendMessage`, data)
+      .post(
+        API_ENDPOINT +
+          `users/${
+            username.toLowerCase() === "matt" ? "rayanne" : "matt"
+          }/sendMessage`,
+        data
+      )
       .then((res) => {
         console.log(res);
         console.log(res.data);
       })
       .catch((error) => console.log(error));
+
+    setMessageText("");
+    setUsername("");
+    setIsSendingMessage(false);
   };
 
   const getMessage = () => {
@@ -79,10 +89,6 @@ function App() {
             </Button>
             <Button variant="primary" onClick={() => sendMessage()}>
               Send Text
-            </Button>
-
-            <Button onClick={() => getMessage()}>
-              Get Message
             </Button>
           </ButtonGroup>
         </>
