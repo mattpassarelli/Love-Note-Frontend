@@ -25,7 +25,9 @@ function App() {
       return;
     }
 
-    let id = Math.floor(Math.random() * 10000);
+    //My D1 Lite can only store a single byte before I need to store a number higher than 255 in more than one byte
+    //I'm lazy. So let's limit it here
+    let id = Math.floor(Math.random() * 254);
 
     let data = {
       id,
