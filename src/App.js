@@ -1,18 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import axios from "axios";
+import { Button, Form, Container, ButtonGroup } from "react-bootstrap";
+
 import "./App.css";
 import { API_ENDPOINT } from "./config";
-import {
-  Button,
-  Form,
-  Container,
-  ButtonGroup,
-  Row,
-  Col,
-} from "react-bootstrap";
-
-import Background from "./images/mailbox.svg";
-
-const axios = require("axios");
 
 function App() {
   const [messageText, setMessageText] = useState("");
@@ -102,9 +93,7 @@ function App() {
                 <Form.Label>
                   Who do you want to send a message to?
                   <div className="text-muted">(enter a name/id)</div>
-                  <div
-                    className={`${recipientError ? "text-red" : "fade-in"}`}
-                  >
+                  <div className={`${recipientError ? "text-red" : "fade-in"}`}>
                     {recipientError || ""}
                   </div>
                 </Form.Label>
