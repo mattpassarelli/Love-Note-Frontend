@@ -1,13 +1,76 @@
 .formHolder {
   background-color: #23272a;
-  /* padding: 100px 200px 0px 200px; */
   height: 100vh;
   width: 100vw;
   color: #ffffff;
   padding-top: 40vh;
+
+  background-image: repeating-linear-gradient(
+      0deg,
+      hsla(347, 0%, 33%, 0.05) 0px,
+      hsla(347, 0%, 33%, 0.05) 50px,
+      transparent 50px,
+      transparent 100px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      hsla(347, 0%, 33%, 0.05) 0px,
+      hsla(347, 0%, 33%, 0.05) 50px,
+      transparent 50px,
+      transparent 100px
+    ),
+    linear-gradient(90deg, hsl(139, 0%, 18%), hsl(139, 0%, 18%));
 }
 
 .messageText {
   background-color: #2c2f33;
   color: #ffffff;
+}
+
+.text-red {
+  color: red;
+  animation: fadeIn ease 0.3s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.header {
+  font-family: "Indie Flower", cursive;
+}
+
+.header-container {
+  display: flex;
+  flex-direction: row;
+  height: 40%;
+  margin-top: -15rem;
+  margin-bottom: 1rem;
+  padding-left: 10px;
+  border-bottom: 1px solid white;
+
+  background-image: url(./images/mailbox.svg);
+  background-repeat: no-repeat;
+  background-position: bottom 1rem right;
+  background-size: contain;
+}
+
+.wrapper {
+  background: #23272a;
+}
+
+.form {
+  background: #23272a;
+  padding: 10px;
+}
+
+@media (max-width: 600px) {
+  .header-container {
+    background-size: 40%;
+  }
 }
